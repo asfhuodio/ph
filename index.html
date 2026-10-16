@@ -39,7 +39,7 @@
             ФизХаб: Задачи, Теория и Видео
           </h1>
           <p class="text-sm text-slate-300 leading-relaxed mb-5">
-            Единое пространство для хранения разборов задач, конспектов теории и видеолекций. Вход доступен по логину и паролю, выданным главным администратором.
+            Единое пространство для хранения разборов задач, конспектов теории и видеоматериалов. Для доступа используйте свой логин и пароль.
           </p>
 
           <div class="rounded-2xl overflow-hidden border border-sky-500/30 mb-5 shadow-lg bg-slate-950">
@@ -48,9 +48,9 @@
         </div>
 
         <div class="bg-slate-950/80 rounded-2xl p-4 border border-slate-800">
-          <div class="text-xs font-semibold uppercase tracking-wider text-sky-400 mb-1">🔒 Вход по выданным аккаунтам</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-sky-400 mb-1">🔒 Доступ к платформе</div>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Логины и пароли для участников создаёт Главный Администратор (<strong class="text-slate-200">respect</strong>) внутри панели управления.
+            Все материалы, папки, разборы задач и загруженные видео доступны участникам после авторизации.
           </p>
         </div>
       </div>
@@ -85,16 +85,7 @@
           </form>
         </div>
 
-        <!-- Immutable Root Admin Notice -->
-        <div class="mt-6 pt-5 border-t border-slate-800">
-          <div class="text-xs font-semibold text-amber-300 mb-1.5 flex items-center gap-1.5">
-            <span>👑</span>
-            <span>Главный Администратор: <strong class="text-white">respect</strong></span>
-          </div>
-          <p class="text-[11px] text-slate-400">
-            После входа под аккаунтом <strong class="text-slate-200">respect</strong> откройте «Админ-панель», чтобы создавать логины и пароли для других участников и копировать их для отправки.
-          </p>
-        </div>
+
       </div>
 
     </div>
@@ -115,8 +106,8 @@
           <div>
             <div class="flex items-center gap-2">
               <span class="font-extrabold text-base sm:text-lg tracking-tight text-white">ФизХаб</span>
-              <span id="currentUserRoleBadge" class="px-2.5 py-0.5 text-[11px] font-semibold rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">
-                Главный Админ
+              <span id="currentUserRoleBadge" class="px-2.5 py-0.5 text-[11px] font-semibold rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/40">
+                Участник
               </span>
             </div>
             <p id="currentUserSubtext" class="text-xs text-slate-400 truncate max-w-[220px] sm:max-w-xs">
@@ -131,8 +122,8 @@
             📁 Папки и материалы
           </button>
           <button type="button" id="navRolesBtn" class="px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition whitespace-nowrap flex items-center gap-1.5">
-            <span>👑 Админ-панель (Роли и права)</span>
-            <span id="usersCountBadge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800 text-sky-300">1</span>
+            <span>👥 Участники и права</span>
+            <span id="usersCountBadge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800 text-sky-300">0</span>
           </button>
           <button type="button" id="navHostingBtn" class="px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition whitespace-nowrap">
             💾 База и Облако
@@ -153,9 +144,6 @@
     <div class="bg-slate-900/70 border-b border-slate-800/80 px-4 sm:px-6 py-2">
       <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs">
         <div class="flex flex-wrap items-center gap-1.5" id="activePermissionsPills"></div>
-        <div class="text-slate-400 text-[11px]">
-          💡 Главный админ (respect) может создавать логины и пароли для участников во вкладке «Админ-панель».
-        </div>
       </div>
     </div>
 
@@ -265,8 +253,8 @@
         <div class="glass-card rounded-2xl p-5 sm:p-6 border border-sky-500/25">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-800">
             <div>
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-semibold mb-2">
-                <span>👑 Панель Главного Администратора</span>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-xs font-semibold mb-2">
+                <span>👥 Управление доступом</span>
               </div>
               <h2 class="text-xl font-bold text-white">Управление пользователями, ролями и правами доступа</h2>
               <p class="text-xs sm:text-sm text-slate-400 mt-1">
@@ -280,20 +268,7 @@
             </div>
           </div>
 
-          <!-- Root Admin Binding Box -->
-          <div class="mt-5 p-4 rounded-2xl bg-slate-900/90 border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <div class="text-xs font-bold text-amber-300 uppercase tracking-wider">Единственный Главный Администратор (Владелец сайта)</div>
-              <p class="text-xs text-slate-300 mt-1">
-                Главный аккаунт навсегда закреплён за логином: <strong id="ownerEmailDisplay" class="text-white underline">respect</strong>. У этого аккаунта всегда включены все 100% прав, а любая возможность сменить главного администратора отключена.
-              </p>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="px-3.5 py-2 rounded-xl bg-amber-500/15 border border-amber-500/40 text-amber-300 font-bold text-xs whitespace-nowrap">
-                🔒 Только respect (неизменяемый)
-              </span>
-            </div>
-          </div>
+
 
           <!-- Users & Granular Permissions Table/Cards -->
           <div id="usersRolesListContainer" class="mt-6 space-y-4"></div>
@@ -423,7 +398,7 @@
             <select id="materialTypeSelect" class="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:outline-none focus:border-sky-500">
               <option value="problem">📐 Задача по физике</option>
               <option value="theory">📖 Теория / Конспект</option>
-              <option value="video">🎬 Видеоразбор / Опыт</option>
+              <option value="video">🎬 Видеоматериал / Видеоразбор</option>
             </select>
           </div>
           <div>
@@ -534,27 +509,35 @@
     </div>
   </div>
 
-  <!-- ===================== MODAL: INTERACTIVE VIDEO & SIMULATION PLAYER ===================== -->
-  <div id="videoPlayerModal" class="hidden fixed inset-0 z-40 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
-    <div class="glass-card rounded-2xl max-w-3xl w-full p-5 sm:p-6 border border-sky-500/30 shadow-2xl space-y-4">
-      <div class="flex items-start justify-between gap-3">
-        <div>
-          <span id="videoModalBadge" class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">🎬 Видеоурок и физическая демонстрация</span>
-          <h3 id="videoModalTitle" class="text-lg font-bold text-white mt-1">Видеоразбор</h3>
+  <!-- ===================== MODAL: VIDEO PLAYER ===================== -->
+  <div id="videoPlayerModal" class="hidden fixed inset-0 z-40 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glass-card rounded-2xl max-w-4xl w-full p-5 sm:p-6 border border-sky-500/30 shadow-2xl space-y-4">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div class="min-w-0 flex-1">
+          <span id="videoModalBadge" class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">🎬 Видеоплеер</span>
+          <h3 id="videoModalTitle" class="text-lg font-bold text-white mt-1 truncate">Видеоматериал</h3>
         </div>
-        <button type="button" id="closeVideoModalBtn" class="text-slate-400 hover:text-white text-sm px-2.5 py-1 rounded-lg bg-slate-800">✕ Закрыть</button>
+        <div class="flex flex-wrap items-center gap-2">
+          <a id="videoModalNewTabBtn" href="#" target="_blank" rel="noopener noreferrer" class="hidden px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition">
+            🔗 В отдельной вкладке
+          </a>
+          <a id="videoModalDownloadBtn" href="#" download="" class="hidden px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold transition">
+            ⬇️ Скачать видео
+          </a>
+          <button type="button" id="closeVideoModalBtn" class="text-slate-300 hover:text-white text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-rose-500/20 hover:text-rose-300 transition">✕ Закрыть</button>
+        </div>
       </div>
 
-      <!-- Interactive Canvas Video Player -->
-      <div class="rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 relative">
-        <div class="relative h-64 sm:h-80 w-full bg-slate-950 flex items-center justify-center">
-          <video id="nativeVideoElement" controls class="hidden w-full h-full object-contain bg-black"></video>
-          <canvas id="physicsVideoCanvas" class="w-full h-full block"></canvas>
-          <div id="videoOverlayStatus" class="absolute top-3 left-3 px-3 py-1 rounded-lg bg-slate-900/80 border border-sky-500/30 text-xs text-sky-300 font-medium pointer-events-none">
-            ▶ Демонстрация эксперимента в реальном времени
+      <!-- Real Video Player Container -->
+      <div class="rounded-2xl overflow-hidden bg-black border border-slate-800 relative">
+        <div class="relative w-full min-h-[260px] sm:min-h-[380px] max-h-[70vh] bg-black flex items-center justify-center">
+          <video id="nativeVideoElement" controls playsinline preload="metadata" class="w-full max-h-[68vh] object-contain bg-black"></video>
+          <iframe id="embedVideoIframe" title="Видеоплеер" class="hidden w-full h-72 sm:h-96 bg-black border-0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          <div id="videoEmptyNotice" class="hidden p-8 text-center text-slate-400 text-xs sm:text-sm">
+            Видеофайл или ссылка не прикреплены к этому материалу.
           </div>
         </div>
-        <div class="p-3 bg-slate-900 flex flex-wrap items-center justify-between gap-3 border-t border-slate-800">
+        <div id="nativeVideoControlsBar" class="p-3 bg-slate-900 flex flex-wrap items-center justify-between gap-3 border-t border-slate-800">
           <div class="flex items-center gap-2">
             <button type="button" id="toggleVideoPlayBtn" class="px-3.5 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold transition">
               ⏸ Пауза
@@ -564,23 +547,25 @@
             </button>
           </div>
           <div class="flex items-center gap-2 text-xs text-slate-300">
-            <span>Скорость опыта:</span>
-            <select id="videoSpeedSelect" aria-label="Скорость воспроизведения опыта" class="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-sky-300">
-              <option value="0.5">0.5x (Замедленно)</option>
-              <option value="1" selected>1.0x (Нормально)</option>
-              <option value="1.5">1.5x (Ускоренно)</option>
-              <option value="2">2.0x (Быстро)</option>
+            <span>Скорость видео:</span>
+            <select id="videoSpeedSelect" aria-label="Скорость воспроизведения видео" class="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-sky-300">
+              <option value="0.5">0.5x</option>
+              <option value="0.75">0.75x</option>
+              <option value="1" selected>1.0x (Обычная)</option>
+              <option value="1.25">1.25x</option>
+              <option value="1.5">1.5x</option>
+              <option value="2">2.0x</option>
             </select>
           </div>
         </div>
       </div>
 
-      <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+      <div id="videoModalInfoBox" class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
         <div id="videoModalFormula" class="text-xs font-semibold text-sky-300 formula-box"></div>
         <p id="videoModalDesc" class="text-xs sm:text-sm text-slate-300 leading-relaxed whitespace-pre-line"></p>
         <div id="videoExternalLinkContainer" class="pt-2 hidden">
           <a id="videoExternalLink" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-300 hover:text-amber-200 underline">
-            🔗 Открыть исходный видеоролик в новой вкладке →
+            🔗 Открыть исходную ссылку на видео в новой вкладке →
           </a>
         </div>
       </div>
@@ -639,13 +624,13 @@
       { key: 'delete_folders', label: 'Удаление папок', short: '🗑️ Удаление папок' },
       { key: 'add_materials', label: 'Добавление задач, теории и видео', short: '➕ Добавление материалов' },
       { key: 'delete_materials', label: 'Удаление любых задач и видео', short: '🧹 Удаление материалов' },
-      { key: 'manage_roles', label: 'Выдача ролей и настройка прав', short: '👑 Управление ролями' }
+      { key: 'manage_roles', label: 'Выдача ролей и настройка прав', short: '⚙️ Управление правами' }
     ];
 
     const ROLE_PRESETS = {
       owner: {
-        name: 'Главный Админ (Владелец)',
-        badgeClass: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+        name: 'Администратор',
+        badgeClass: 'bg-sky-500/20 text-sky-300 border-sky-500/40',
         perms: { view_folders: true, create_folders: true, edit_all_folders: true, delete_folders: true, add_materials: true, delete_materials: true, manage_roles: true }
       },
       admin: {
@@ -686,9 +671,9 @@
         users: [
           {
             id: 'u_owner',
-            name: 'respect (Главный Админ)',
-            email: 'respect',
-            password: 'sigma',
+            name: 'Администратор',
+            email: ROOT_ADMIN_LOGIN,
+            password: ROOT_ADMIN_PASS,
             role: 'owner',
             perms: { ...ROLE_PRESETS.owner.perms }
           }
@@ -698,14 +683,91 @@
       };
     }
 
+    // ==================== INDEXEDDB STORAGE FOR LARGE VIDEO/FILE BLOBS ====================
+    const IDB_NAME = 'physhub_files_db_v1';
+    const IDB_STORE = 'files';
+
+    function openFilesDB() {
+      return new Promise((resolve, reject) => {
+        if (typeof indexedDB === 'undefined') {
+          resolve(null);
+          return;
+        }
+        const req = indexedDB.open(IDB_NAME, 1);
+        req.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains(IDB_STORE)) {
+            db.createObjectStore(IDB_STORE);
+          }
+        };
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => resolve(null);
+      });
+    }
+
+    async function saveFileBlobToDB(id, blob) {
+      if (!id || !blob) return;
+      try {
+        const db = await openFilesDB();
+        if (!db) return;
+        const tx = db.transaction(IDB_STORE, 'readwrite');
+        tx.objectStore(IDB_STORE).put(blob, id);
+      } catch (e) {
+        // Ignore IndexedDB errors in restricted environments
+      }
+    }
+
+    async function hydrateBlobsFromDB() {
+      try {
+        const db = await openFilesDB();
+        if (!db) return;
+        const allAtts = [];
+        (state.materials || []).forEach(mat => {
+          if (mat.videoFile && mat.videoFile.id) allAtts.push(mat.videoFile);
+          if (Array.isArray(mat.attachments)) {
+            mat.attachments.forEach(a => {
+              if (a && a.id) allAtts.push(a);
+            });
+          }
+        });
+        if (allAtts.length === 0) return;
+
+        let updated = false;
+        await Promise.all(allAtts.map(att => new Promise((resolve) => {
+          if (blobUrlCache.has(att.id)) {
+            resolve();
+            return;
+          }
+          try {
+            const tx = db.transaction(IDB_STORE, 'readonly');
+            const req = tx.objectStore(IDB_STORE).get(att.id);
+            req.onsuccess = () => {
+              if (req.result instanceof Blob) {
+                const url = URL.createObjectURL(req.result);
+                blobUrlCache.set(att.id, url);
+                att.blobUrl = url;
+                updated = true;
+              }
+              resolve();
+            };
+            req.onerror = () => resolve();
+          } catch (err) {
+            resolve();
+          }
+        })));
+
+        if (updated && state.currentUserId) {
+          renderActiveFolderContent();
+        }
+      } catch (e) {
+        // Ignore IndexedDB hydration errors
+      }
+    }
+
     // ==================== STATE MANAGEMENT & STORAGE ====================
     const STORAGE_KEY = 'physhub_portal_state_v3';
     let state = loadState();
     let pendingDeleteCallback = null;
-    let videoAnimFrame = null;
-    let videoPlaying = true;
-    let videoSimSpeed = 1;
-    let currentSimType = 'pendulum';
 
     function enforceSingleRootAdmin(st) {
       if (!st || !Array.isArray(st.users)) return;
@@ -714,7 +776,7 @@
       if (!ownerUser) {
         ownerUser = {
           id: 'u_owner',
-          name: 'respect (Главный Админ)',
+          name: 'Администратор',
           email: ROOT_ADMIN_LOGIN,
           password: ROOT_ADMIN_PASS,
           role: 'owner',
@@ -723,7 +785,7 @@
         st.users.unshift(ownerUser);
       } else {
         ownerUser.id = 'u_owner';
-        ownerUser.name = 'respect (Главный Админ)';
+        ownerUser.name = 'Администратор';
         ownerUser.email = ROOT_ADMIN_LOGIN;
         ownerUser.password = ROOT_ADMIN_PASS;
         ownerUser.role = 'owner';
@@ -762,7 +824,25 @@
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       } catch (e) {
-        // Ignore storage errors
+        // If quota exceeded due to large base64 dataUrl, save lightweight metadata (blobs are in IndexedDB / memory)
+        try {
+          const lightState = JSON.parse(JSON.stringify(state));
+          (lightState.materials || []).forEach(m => {
+            if (m.videoFile && m.videoFile.dataUrl && m.videoFile.dataUrl.length > 250000) {
+              m.videoFile.dataUrl = '';
+            }
+            if (Array.isArray(m.attachments)) {
+              m.attachments.forEach(a => {
+                if (a.dataUrl && a.dataUrl.length > 250000) {
+                  a.dataUrl = '';
+                }
+              });
+            }
+          });
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(lightState));
+        } catch (err2) {
+          // Ignore storage errors
+        }
       }
     }
 
@@ -824,12 +904,13 @@
 
     function getUserNameById(userId) {
       const u = state.users.find(x => x.id === userId);
-      return u ? u.name : 'Участник';
+      if (!u) return 'Участник';
+      return isRootOwner(u) ? 'Администратор' : u.name;
     }
 
     // ==================== AUTH VIEW RENDERING & LOGIC ====================
     function renderAuthScreen() {
-      // Login-only screen; no demo quick buttons
+      // Login screen
     }
 
     function loginAsUser(userId, openAdminPanel = false) {
@@ -838,14 +919,15 @@
       if (!user) return;
       state.currentUserId = user.id;
       if (openAdminPanel && isRootOwner(user)) {
-        state.activeTab = 'roles';
+        state.activeTab = 'folders';
       }
       saveState();
       document.getElementById('authView').classList.add('hidden');
       document.getElementById('appView').classList.remove('hidden');
       renderApp();
-      showToast(`Вы вошли как: ${user.name} (${ROLE_PRESETS[user.role]?.name || user.role})`, 'success');
+      showToast('Вход выполнен успешно', 'success');
     }
+
     // ==================== MAIN APP RENDERING ====================
     function renderApp() {
       const user = getCurrentUser();
@@ -859,15 +941,17 @@
       const preset = ROLE_PRESETS[user.role] || ROLE_PRESETS.viewer;
       const roleBadge = document.getElementById('currentUserRoleBadge');
       roleBadge.className = `px-2.5 py-0.5 text-[11px] font-semibold rounded-full border ${preset.badgeClass}`;
-      roleBadge.textContent = isRootOwner(user) ? '👑 Главный Админ (Вы)' : preset.name;
+      roleBadge.textContent = preset.name;
 
-      document.getElementById('currentUserSubtext').textContent = `${user.name} • ${user.email}`;
-      document.getElementById('usersCountBadge').textContent = String(state.users.length);
+      document.getElementById('currentUserSubtext').textContent = isRootOwner(user)
+        ? 'Образовательный портал'
+        : `${user.name} • ${user.email}`;
 
-
+      const regularUsersCount = state.users.filter(u => !isRootOwner(u)).length;
+      document.getElementById('usersCountBadge').textContent = String(regularUsersCount);
 
       const pillsContainer = document.getElementById('activePermissionsPills');
-      pillsContainer.innerHTML = '<span class="text-slate-400 font-medium mr-1">Ваши права:</span>';
+      pillsContainer.innerHTML = '<span class="text-slate-400 font-medium mr-1">Доступные действия:</span>';
       PERMISSION_DEFS.forEach(def => {
         const allowed = hasPerm(def.key);
         const span = document.createElement('span');
@@ -904,6 +988,57 @@
 
       renderFoldersSection();
       renderRolesSection();
+    }
+
+    // ==================== VIDEO & MEDIA HELPERS ====================
+    function isVideoAttachment(att) {
+      if (!att) return false;
+      const t = (att.type || '').toLowerCase();
+      const n = (att.name || '').toLowerCase();
+      return t.startsWith('video/') || /\.(mp4|webm|mov|m4v|mkv|avi|wmv|flv|3gp|ogv|mpeg|mpg|ts)$/i.test(n);
+    }
+
+    function parseExternalVideoEmbed(rawUrl) {
+      if (!rawUrl || typeof rawUrl !== 'string') return null;
+      const url = rawUrl.trim();
+      if (!url) return null;
+
+      // YouTube
+      const ytMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{6,})/i);
+      if (ytMatch && ytMatch[1]) {
+        return { type: 'iframe', src: `https://www.youtube.com/embed/${ytMatch[1]}` };
+      }
+
+      // RuTube
+      const rtMatch = url.match(/rutube\.ru\/(?:video|play\/embed)\/([a-zA-Z0-9_-]+)/i);
+      if (rtMatch && rtMatch[1]) {
+        return { type: 'iframe', src: `https://rutube.ru/play/embed/${rtMatch[1]}` };
+      }
+
+      // VK Video (vk.com/video-123_456 or vkvideo.ru/video-123_456)
+      const vkMatch = url.match(/(?:vk\.com|vkvideo\.ru)\/video(-?\d+)_(\d+)/i);
+      if (vkMatch && vkMatch[1] && vkMatch[2]) {
+        return { type: 'iframe', src: `https://vk.com/video_ext.php?oid=${vkMatch[1]}&id=${vkMatch[2]}&hd=2` };
+      }
+
+      // Direct video file URL or blob/data URL
+      if (/\.(mp4|webm|mov|m4v|ogg|ogv)(\?.*)?$/i.test(url) || url.startsWith('blob:') || url.startsWith('data:video/')) {
+        return { type: 'video', src: url };
+      }
+
+      return { type: 'video', src: url };
+    }
+
+    function getMaterialPrimaryVideo(mat) {
+      if (!mat) return null;
+      if (mat.videoFile && (mat.videoFile.blobUrl || mat.videoFile.dataUrl || blobUrlCache.has(mat.videoFile.id))) {
+        return mat.videoFile;
+      }
+      if (Array.isArray(mat.attachments)) {
+        const found = mat.attachments.find(a => isVideoAttachment(a));
+        if (found) return found;
+      }
+      return null;
     }
 
     // ==================== FOLDERS & MATERIALS RENDERING ====================
@@ -1149,7 +1284,7 @@
           <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 text-center space-y-2">
             <div class="text-3xl">⚛️</div>
             <div class="text-sm font-bold text-white">В этой категории пока нет материалов</div>
-            <p class="text-xs text-slate-400">Нажмите «+ Добавить задачу / теорию / видео», чтобы пополнить папку.</p>
+            <p class="text-xs text-slate-400">Нажмите «+ Добавить задачу / теорию / видео» или перетащите файл в поле выше.</p>
           </div>
         `;
         return;
@@ -1162,7 +1297,7 @@
         const typeMeta = {
           problem: { icon: '📐', label: 'Задача', badge: 'bg-sky-500/20 text-sky-300 border-sky-500/30' },
           theory: { icon: '📖', label: 'Теория и конспект', badge: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' },
-          video: { icon: '🎬', label: 'Видео и симуляция', badge: 'bg-amber-500/20 text-amber-300 border-amber-500/30' }
+          video: { icon: '🎬', label: 'Видео', badge: 'bg-amber-500/20 text-amber-300 border-amber-500/30' }
         }[mat.type] || { icon: '📄', label: 'Материал', badge: 'bg-slate-800 text-slate-300' };
 
         card.innerHTML = `
@@ -1227,31 +1362,58 @@
         }
 
         const attachArea = card.querySelector('.mat-attachments-area');
-        if (mat.videoFile && mat.videoFile.dataUrl) {
+
+        // Render primary uploaded videoFile if present
+        if (mat.videoFile && (mat.videoFile.blobUrl || mat.videoFile.dataUrl || blobUrlCache.has(mat.videoFile.id))) {
           const vidBlobUrl = getOrCreateBlobUrl(mat.videoFile);
           const vidWrap = document.createElement('div');
           vidWrap.className = 'rounded-xl overflow-hidden bg-slate-950 border border-amber-500/30 p-3 space-y-2.5';
           vidWrap.innerHTML = `
             <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
-              <span class="font-semibold text-amber-300 truncate">🎬 ${escapeHtml(mat.videoFile.name)}</span>
+              <span class="font-semibold text-amber-300 truncate">🎬 ${escapeHtml(mat.videoFile.name)} ${mat.videoFile.sizeFormatted ? `(${escapeHtml(mat.videoFile.sizeFormatted)})` : ''}</span>
               <div class="flex flex-wrap items-center gap-1.5">
                 <button type="button" class="open-onsite-btn px-2.5 py-1 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold whitespace-nowrap transition">👁️ Открыть на сайте</button>
-                <a href="${vidBlobUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 font-semibold whitespace-nowrap transition">🔗 В отдельной ссылке</a>
-                <a href="${mat.videoFile.dataUrl}" download="${escapeHtml(mat.videoFile.name)}" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium whitespace-nowrap transition">⬇️ Скачать</a>
+                <a href="${vidBlobUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 font-semibold whitespace-nowrap transition">🔗 В отдельной вкладке</a>
+                <a href="${vidBlobUrl}" download="${escapeHtml(mat.videoFile.name)}" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium whitespace-nowrap transition">⬇️ Скачать</a>
               </div>
             </div>
-            <video controls src="${vidBlobUrl}" class="w-full max-h-80 rounded-lg bg-black"></video>
+            <video controls playsinline preload="metadata" src="${vidBlobUrl}" class="w-full max-h-96 rounded-lg bg-black"></video>
           `;
-          vidWrap.querySelector('.open-onsite-btn').addEventListener('click', () => openFileViewerModal(mat.videoFile));
+          vidWrap.querySelector('.open-onsite-btn').addEventListener('click', () => openVideoModal(mat));
           attachArea.appendChild(vidWrap);
+        } else if (mat.videoUrl && mat.videoUrl.trim()) {
+          // Render embedded external video if videoUrl is provided
+          const parsedVid = parseExternalVideoEmbed(mat.videoUrl);
+          if (parsedVid) {
+            const urlWrap = document.createElement('div');
+            urlWrap.className = 'rounded-xl overflow-hidden bg-slate-950 border border-amber-500/30 p-3 space-y-2.5';
+            if (parsedVid.type === 'iframe') {
+              urlWrap.innerHTML = `
+                <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+                  <span class="font-semibold text-amber-300 truncate">🎬 Видео по ссылке</span>
+                  <a href="${escapeHtml(mat.videoUrl)}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 font-semibold whitespace-nowrap transition">🔗 Открыть оригинал</a>
+                </div>
+                <iframe src="${escapeHtml(parsedVid.src)}" title="${escapeHtml(mat.title)}" class="w-full h-64 sm:h-80 rounded-lg bg-black border-0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+              `;
+            } else {
+              urlWrap.innerHTML = `
+                <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+                  <span class="font-semibold text-amber-300 truncate">🎬 Видео по прямой ссылке</span>
+                  <a href="${escapeHtml(mat.videoUrl)}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 font-semibold whitespace-nowrap transition">🔗 Открыть в новой вкладке</a>
+                </div>
+                <video controls playsinline preload="metadata" src="${escapeHtml(parsedVid.src)}" class="w-full max-h-96 rounded-lg bg-black"></video>
+              `;
+            }
+            attachArea.appendChild(urlWrap);
+          }
         }
 
         if (Array.isArray(mat.attachments) && mat.attachments.length > 0) {
           const filesGrid = document.createElement('div');
           filesGrid.className = 'grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1';
           mat.attachments.forEach(att => {
-            const isImg = (att.type || '').startsWith('image/');
-            const isVid = (att.type || '').startsWith('video/');
+            const isImg = (att.type || '').startsWith('image/') || /\.(png|jpe?g|gif|webp|svg)$/i.test(att.name || '');
+            const isVid = isVideoAttachment(att);
             const isPdf = (att.type || '') === 'application/pdf' || (att.name || '').toLowerCase().endsWith('.pdf');
             const blobUrl = getOrCreateBlobUrl(att);
             const item = document.createElement('div');
@@ -1259,7 +1421,7 @@
             if (isImg) {
               item.innerHTML = `
                 <div class="preview-click-area rounded-lg overflow-hidden bg-slate-900 border border-slate-800 max-h-48 flex items-center justify-center cursor-pointer group relative">
-                  <img src="${att.dataUrl}" alt="${escapeHtml(att.name)}" class="max-h-48 w-auto object-contain max-w-full group-hover:scale-[1.02] transition" />
+                  <img src="${blobUrl}" alt="${escapeHtml(att.name)}" class="max-h-48 w-auto object-contain max-w-full group-hover:scale-[1.02] transition" />
                 </div>
                 <div class="flex items-center justify-between gap-2 text-xs">
                   <span class="text-slate-200 truncate font-semibold" title="${escapeHtml(att.name)}">🖼️ ${escapeHtml(att.name)}</span>
@@ -1268,13 +1430,13 @@
                 <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
                   <button type="button" class="open-onsite-btn flex-1 py-1.5 px-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold whitespace-nowrap transition text-center">👁️ Открыть на сайте</button>
                   <a href="${blobUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 px-2.5 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 font-semibold whitespace-nowrap transition text-center">🔗 В отдельной ссылке</a>
-                  <a href="${att.dataUrl}" download="${escapeHtml(att.name)}" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium whitespace-nowrap transition" title="Скачать файл">⬇️</a>
+                  <a href="${blobUrl}" download="${escapeHtml(att.name)}" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium whitespace-nowrap transition" title="Скачать файл">⬇️</a>
                 </div>
               `;
               item.querySelector('.preview-click-area').addEventListener('click', () => openFileViewerModal(att));
             } else if (isVid) {
               item.innerHTML = `
-                <video controls src="${blobUrl}" class="w-full max-h-48 rounded-lg bg-black"></video>
+                <video controls playsinline preload="metadata" src="${blobUrl}" class="w-full max-h-56 rounded-lg bg-black"></video>
                 <div class="flex items-center justify-between gap-2 text-xs">
                   <span class="text-amber-300 truncate font-semibold" title="${escapeHtml(att.name)}">🎬 ${escapeHtml(att.name)}</span>
                   <span class="text-[10px] text-slate-400 shrink-0">${escapeHtml(att.sizeFormatted || '')}</span>
@@ -1282,7 +1444,7 @@
                 <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
                   <button type="button" class="open-onsite-btn flex-1 py-1.5 px-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold whitespace-nowrap transition text-center">👁️ Открыть на сайте</button>
                   <a href="${blobUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 px-2.5 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 font-semibold whitespace-nowrap transition text-center">🔗 В отдельной ссылке</a>
-                  <a href="${att.dataUrl}" download="${escapeHtml(att.name)}" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium whitespace-nowrap transition" title="Скачать файл">⬇️</a>
+                  <a href="${blobUrl}" download="${escapeHtml(att.name)}" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium whitespace-nowrap transition" title="Скачать файл">⬇️</a>
                 </div>
               `;
             } else {
@@ -1299,7 +1461,7 @@
                 <div class="flex flex-wrap items-center gap-1.5 text-[11px] pt-1">
                   <button type="button" class="open-onsite-btn flex-1 py-1.5 px-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold whitespace-nowrap transition text-center">👁️ Открыть на сайте</button>
                   <a href="${blobUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 px-2.5 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 font-semibold whitespace-nowrap transition text-center">🔗 В отдельной ссылке</a>
-                  <a href="${att.dataUrl}" download="${escapeHtml(att.name)}" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium whitespace-nowrap transition" title="Скачать файл">⬇️</a>
+                  <a href="${blobUrl}" download="${escapeHtml(att.name)}" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium whitespace-nowrap transition" title="Скачать файл">⬇️</a>
                 </div>
               `;
             }
@@ -1354,11 +1516,11 @@
             solBox.classList.toggle('hidden');
             toggleSolBtn.textContent = solBox.classList.contains('hidden') ? 'Показать решение' : 'Скрыть решение';
           });
-        } else if (mat.type === 'video') {
+        } else if (mat.type === 'video' || getMaterialPrimaryVideo(mat) || (mat.videoUrl && mat.videoUrl.trim())) {
           const playBtn = document.createElement('button');
           playBtn.type = 'button';
           playBtn.className = 'px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-bold text-xs shadow transition inline-flex items-center gap-2';
-          playBtn.innerHTML = '<span>▶ Открыть видеоплеер и интерактивный опыт</span>';
+          playBtn.innerHTML = '<span>▶ Открыть видео в большом плеере</span>';
           playBtn.addEventListener('click', () => openVideoModal(mat));
           interArea.appendChild(playBtn);
         }
@@ -1369,21 +1531,27 @@
 
     // ==================== ROLES & PERMISSIONS PANEL RENDERING ====================
     function renderRolesSection() {
-      const ownerDisplay = document.getElementById('ownerEmailDisplay');
-      if (ownerDisplay) ownerDisplay.textContent = ROOT_ADMIN_LOGIN;
-
       const canManage = hasPerm('manage_roles');
       const container = document.getElementById('usersRolesListContainer');
       container.innerHTML = '';
 
-      state.users.forEach(u => {
-        const isOwner = isRootOwner(u);
+      const participantUsers = state.users.filter(u => !isRootOwner(u));
+      if (participantUsers.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 text-center space-y-2">
+            <div class="text-3xl">👥</div>
+            <div class="text-sm font-bold text-white">Дополнительные участники пока не созданы</div>
+            <p class="text-xs text-slate-400">Нажмите «+ Создать логин и пароль участнику» выше, чтобы добавить аккаунт и настроить его права доступа.</p>
+          </div>
+        `;
+        return;
+      }
+
+      participantUsers.forEach(u => {
         const preset = ROLE_PRESETS[u.role] || ROLE_PRESETS.viewer;
 
         const row = document.createElement('div');
-        row.className = `p-4 sm:p-5 rounded-2xl border ${
-          isOwner ? 'bg-slate-900/95 border-amber-500/40' : 'bg-slate-900/70 border-slate-800'
-        } space-y-4`;
+        row.className = 'p-4 sm:p-5 rounded-2xl border bg-slate-900/70 border-slate-800 space-y-4';
 
         row.innerHTML = `
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -1391,12 +1559,12 @@
               <div class="flex items-center gap-2">
                 <span class="text-sm sm:text-base font-bold text-white">${escapeHtml(u.name)}</span>
                 <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${preset.badgeClass}">
-                  ${isOwner ? '👑 Главный Админ (Владелец)' : preset.name}
+                  ${preset.name}
                 </span>
               </div>
               <div class="flex flex-wrap items-center gap-3 text-xs text-slate-300 mt-1">
                 <span>Логин: <strong class="text-sky-300 font-mono">${escapeHtml(u.email)}</strong></span>
-                ${!isOwner ? `<span>Пароль: <strong class="text-emerald-300 font-mono">${escapeHtml(u.password || '')}</strong></span>` : '<span class="text-slate-400">Пароль: скрыт (аккаунт владельца)</span>'}
+                <span>Пароль: <strong class="text-emerald-300 font-mono">${escapeHtml(u.password || '')}</strong></span>
               </div>
             </div>
 
@@ -1412,124 +1580,118 @@
         `;
 
         const roleControls = row.querySelector('.user-role-controls');
-        if (!isOwner) {
-          if (canManage) {
-            const copyCredsBtn = document.createElement('button');
-            copyCredsBtn.type = 'button';
-            copyCredsBtn.className = 'px-3 py-1.5 rounded-xl bg-sky-500/15 hover:bg-sky-500/30 border border-sky-500/30 text-sky-300 text-xs font-semibold transition';
-            copyCredsBtn.textContent = '📋 Скопировать логин и пароль';
-            copyCredsBtn.addEventListener('click', () => {
-              const text = `Вход на сайт ФизХаб:\nЛогин: ${u.email}\nПароль: ${u.password}`;
-              try {
-                const ta = document.createElement('textarea');
-                ta.value = text;
-                document.body.appendChild(ta);
-                ta.select();
-                document.execCommand('copy');
-                ta.remove();
-                showToast(`Логин и пароль для ${u.name} скопированы! Можете отправить их участнику.`, 'success');
-              } catch (err) {
-                showToast(text, 'info');
-              }
-            });
-            roleControls.appendChild(copyCredsBtn);
-
-            const passEditInput = document.createElement('input');
-            passEditInput.type = 'text';
-            passEditInput.value = u.password || '';
-            passEditInput.setAttribute('aria-label', 'Пароль участника');
-            passEditInput.title = 'Изменить пароль участника';
-            passEditInput.className = 'w-28 px-2.5 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-emerald-300 font-mono focus:outline-none focus:border-sky-500';
-            passEditInput.addEventListener('change', () => {
-              const np = passEditInput.value.trim();
-              if (!np) {
-                passEditInput.value = u.password || '';
-                return;
-              }
-              u.password = np;
-              saveState();
-              renderRolesSection();
-              showToast(`Новый пароль для ${u.name} сохранён!`, 'success');
-            });
-            roleControls.appendChild(passEditInput);
-          }
-          const select = document.createElement('select');
-          select.setAttribute('aria-label', 'Выбрать роль пользователя');
-          select.disabled = !canManage;
-          select.className = 'px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-sky-300 font-semibold focus:outline-none';
-          [
-            { val: 'admin', label: '👑 Администратор' },
-            { val: 'moderator', label: '🛡️ Модератор' },
-            { val: 'editor', label: '✏️ Участник (Автор)' },
-            { val: 'viewer', label: '👀 Читатель (Ученик)' }
-          ].forEach(optData => {
-            const opt = document.createElement('option');
-            opt.value = optData.val;
-            opt.textContent = optData.label;
-            if (u.role === optData.val) opt.selected = true;
-            select.appendChild(opt);
+        if (canManage) {
+          const copyCredsBtn = document.createElement('button');
+          copyCredsBtn.type = 'button';
+          copyCredsBtn.className = 'px-3 py-1.5 rounded-xl bg-sky-500/15 hover:bg-sky-500/30 border border-sky-500/30 text-sky-300 text-xs font-semibold transition';
+          copyCredsBtn.textContent = '📋 Скопировать логин и пароль';
+          copyCredsBtn.addEventListener('click', () => {
+            const text = `Вход на сайт ФизХаб:\nЛогин: ${u.email}\nПароль: ${u.password}`;
+            try {
+              const ta = document.createElement('textarea');
+              ta.value = text;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              ta.remove();
+              showToast(`Логин и пароль для ${u.name} скопированы!`, 'success');
+            } catch (err) {
+              showToast(text, 'info');
+            }
           });
+          roleControls.appendChild(copyCredsBtn);
 
-          select.addEventListener('change', () => {
-            if (!canManage) {
-              showToast('Только администратор с правом управления ролями может менять роли!', 'error');
+          const passEditInput = document.createElement('input');
+          passEditInput.type = 'text';
+          passEditInput.value = u.password || '';
+          passEditInput.setAttribute('aria-label', 'Пароль участника');
+          passEditInput.title = 'Изменить пароль участника';
+          passEditInput.className = 'w-28 px-2.5 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-emerald-300 font-mono focus:outline-none focus:border-sky-500';
+          passEditInput.addEventListener('change', () => {
+            const np = passEditInput.value.trim();
+            if (!np) {
+              passEditInput.value = u.password || '';
               return;
             }
-            const newRole = select.value;
-            u.role = newRole;
-            u.perms = { ...(ROLE_PRESETS[newRole]?.perms || ROLE_PRESETS.viewer.perms) };
+            u.password = np;
             saveState();
-            renderApp();
-            showToast(`Роль для ${u.name} изменена на «${ROLE_PRESETS[newRole]?.name}»`, 'success');
+            renderRolesSection();
+            showToast(`Новый пароль для ${u.name} сохранён!`, 'success');
           });
-          roleControls.appendChild(select);
+          roleControls.appendChild(passEditInput);
+        }
 
-          if (canManage) {
-            const delUserBtn = document.createElement('button');
-            delUserBtn.type = 'button';
-            delUserBtn.className = 'px-3 py-1.5 rounded-xl bg-rose-500/15 hover:bg-rose-500/30 border border-rose-500/30 text-rose-300 text-xs font-medium transition';
-            delUserBtn.textContent = 'Удалить';
-            delUserBtn.addEventListener('click', () => {
-              confirmDelete(
-                `Удалить пользователя ${u.name}?`,
-                'Пользователь потеряет доступ к аккаунту, но его папки останутся в базе.',
-                () => {
-                  state.users = state.users.filter(x => x.id !== u.id);
-                  if (state.currentUserId === u.id) {
-                    state.currentUserId = state.users[0]?.id || null;
-                  }
-                  saveState();
-                  renderApp();
-                  showToast(`Пользователь ${u.name} удалён`, 'info');
-                }
-              );
-            });
-            roleControls.appendChild(delUserBtn);
+        const select = document.createElement('select');
+        select.setAttribute('aria-label', 'Выбрать роль пользователя');
+        select.disabled = !canManage;
+        select.className = 'px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-sky-300 font-semibold focus:outline-none';
+        [
+          { val: 'admin', label: '⚙️ Администратор' },
+          { val: 'moderator', label: '🛡️ Модератор' },
+          { val: 'editor', label: '✏️ Участник (Автор)' },
+          { val: 'viewer', label: '👀 Читатель (Ученик)' }
+        ].forEach(optData => {
+          const opt = document.createElement('option');
+          opt.value = optData.val;
+          opt.textContent = optData.label;
+          if (u.role === optData.val) opt.selected = true;
+          select.appendChild(opt);
+        });
+
+        select.addEventListener('change', () => {
+          if (!canManage) {
+            showToast('У вас нет прав для изменения ролей.', 'error');
+            return;
           }
-        } else {
-          const badge = document.createElement('span');
-          badge.className = 'text-xs text-amber-300 font-medium';
-          badge.textContent = '🔒 Полный доступ владельца (нельзя ограничить)';
-          roleControls.appendChild(badge);
+          const newRole = select.value;
+          u.role = newRole;
+          u.perms = { ...(ROLE_PRESETS[newRole]?.perms || ROLE_PRESETS.viewer.perms) };
+          saveState();
+          renderApp();
+          showToast(`Роль для ${u.name} изменена на «${ROLE_PRESETS[newRole]?.name}»`, 'success');
+        });
+        roleControls.appendChild(select);
+
+        if (canManage) {
+          const delUserBtn = document.createElement('button');
+          delUserBtn.type = 'button';
+          delUserBtn.className = 'px-3 py-1.5 rounded-xl bg-rose-500/15 hover:bg-rose-500/30 border border-rose-500/30 text-rose-300 text-xs font-medium transition';
+          delUserBtn.textContent = 'Удалить';
+          delUserBtn.addEventListener('click', () => {
+            confirmDelete(
+              `Удалить пользователя ${u.name}?`,
+              'Пользователь потеряет доступ к аккаунту, но его папки останутся в базе.',
+              () => {
+                state.users = state.users.filter(x => x.id !== u.id);
+                if (state.currentUserId === u.id) {
+                  state.currentUserId = state.users[0]?.id || null;
+                }
+                saveState();
+                renderApp();
+                showToast(`Пользователь ${u.name} удалён`, 'info');
+              }
+            );
+          });
+          roleControls.appendChild(delUserBtn);
         }
 
         const permsGrid = row.querySelector('.perms-grid');
         PERMISSION_DEFS.forEach(def => {
-          const checked = isOwner ? true : Boolean(u.perms && u.perms[def.key]);
+          const checked = Boolean(u.perms && u.perms[def.key]);
           const lbl = document.createElement('label');
           lbl.className = `flex items-center gap-2 p-2 rounded-xl border text-xs ${
             checked
               ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-200'
               : 'bg-slate-950/60 border-slate-800 text-slate-400'
-          } ${(!isOwner && canManage) ? 'cursor-pointer hover:border-sky-500/40' : 'opacity-80'}`;
+          } ${canManage ? 'cursor-pointer hover:border-sky-500/40' : 'opacity-80'}`;
 
           const cb = document.createElement('input');
           cb.type = 'checkbox';
           cb.checked = checked;
-          cb.disabled = isOwner || !canManage;
+          cb.disabled = !canManage;
           cb.className = 'rounded text-sky-500 focus:ring-sky-500';
           cb.addEventListener('change', () => {
-            if (!canManage || isOwner) return;
+            if (!canManage) return;
             if (!u.perms) u.perms = {};
             u.perms[def.key] = cb.checked;
             saveState();
@@ -1551,7 +1713,7 @@
     // ==================== MODALS & ACTIONS ====================
     function openCreateFolderModal() {
       if (!hasPerm('create_folders')) {
-        showToast('У вашей роли нет прав на создание папок. Обратитесь к Главному Администратору.', 'error');
+        showToast('У вашей роли нет прав на создание папок.', 'error');
         return;
       }
       document.getElementById('folderModalTitle').textContent = 'Создать новую папку по физике';
@@ -1585,7 +1747,7 @@
         if (!canEditAll && u.id !== state.currentUserId) return;
         const opt = document.createElement('option');
         opt.value = u.id;
-        opt.textContent = u.name;
+        opt.textContent = isRootOwner(u) ? 'Администратор' : u.name;
         if (u.id === selectedUserId) opt.selected = true;
         sel.appendChild(opt);
       });
@@ -1620,8 +1782,12 @@
         webp: 'image/webp',
         svg: 'image/svg+xml',
         mp4: 'video/mp4',
+        m4v: 'video/mp4',
         webm: 'video/webm',
-        mov: 'video/quicktime',
+        mov: 'video/mp4',
+        mkv: 'video/webm',
+        avi: 'video/mp4',
+        ogv: 'video/ogg',
         mp3: 'audio/mpeg',
         wav: 'audio/wav'
       };
@@ -1631,7 +1797,15 @@
     }
 
     function getOrCreateBlobUrl(att) {
-      if (!att || !att.dataUrl) return '#';
+      if (!att) return '#';
+      if (att.id && blobUrlCache.has(att.id)) {
+        return blobUrlCache.get(att.id);
+      }
+      if (att.blobUrl && att.blobUrl.startsWith('blob:')) {
+        if (att.id) blobUrlCache.set(att.id, att.blobUrl);
+        return att.blobUrl;
+      }
+      if (!att.dataUrl) return '#';
       const cacheKey = att.id || (att.name + '_' + att.dataUrl.length);
       if (blobUrlCache.has(cacheKey)) return blobUrlCache.get(cacheKey);
       try {
@@ -1649,10 +1823,42 @@
         const blob = new Blob([u8arr], { type: mime });
         const url = URL.createObjectURL(blob);
         blobUrlCache.set(cacheKey, url);
+        if (att.id) blobUrlCache.set(att.id, url);
         return url;
       } catch (e) {
         return att.dataUrl;
       }
+    }
+
+    function createAttachmentFromFile(file, prefix = 'att') {
+      const id = prefix + '_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
+      const mime = guessMimeType(file.name, file.type);
+      const safeBlob = new Blob([file], { type: mime });
+      const blobUrl = URL.createObjectURL(safeBlob);
+      blobUrlCache.set(id, blobUrl);
+      saveFileBlobToDB(id, safeBlob);
+
+      const attObj = {
+        id,
+        name: file.name,
+        type: mime,
+        size: file.size,
+        sizeFormatted: formatFileSize(file.size),
+        blobUrl,
+        dataUrl: ''
+      };
+
+      // For smaller files (<= 2MB), also populate dataUrl in background for JSON export compatibility
+      if (file.size <= 2 * 1024 * 1024) {
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          attObj.dataUrl = ev.target.result;
+          saveState();
+        };
+        reader.readAsDataURL(file);
+      }
+
+      return attObj;
     }
 
     function decodeDataUrlText(dataUrl) {
@@ -1671,7 +1877,9 @@
     }
 
     function openFileViewerModal(att) {
-      if (!att || !att.dataUrl) return;
+      if (!att) return;
+      const blobUrl = getOrCreateBlobUrl(att);
+      if (!blobUrl || blobUrl === '#') return;
       currentViewerFile = att;
       const modal = document.getElementById('fileViewerModal');
       const titleEl = document.getElementById('fileViewerTitle');
@@ -1680,31 +1888,30 @@
       const downloadLink = document.getElementById('fileViewerDownloadLink');
       const bodyEl = document.getElementById('fileViewerBody');
 
-      const blobUrl = getOrCreateBlobUrl(att);
       titleEl.textContent = att.name || 'Файл';
       sizeEl.textContent = att.sizeFormatted ? `(${att.sizeFormatted})` : '';
       newTabLink.href = blobUrl;
-      downloadLink.href = att.dataUrl;
+      downloadLink.href = blobUrl;
       downloadLink.setAttribute('download', att.name || 'file');
 
       const nameLower = (att.name || '').toLowerCase();
       const mime = guessMimeType(att.name, att.type);
-      const isImg = mime.startsWith('image/');
-      const isVid = mime.startsWith('video/');
-      const isAud = mime.startsWith('audio/');
+      const isImg = mime.startsWith('image/') || /\.(png|jpe?g|gif|webp|svg)$/i.test(nameLower);
+      const isVid = isVideoAttachment(att);
+      const isAud = mime.startsWith('audio/') || /\.(mp3|wav|ogg)$/i.test(nameLower);
       const isPdf = mime === 'application/pdf' || nameLower.endsWith('.pdf');
       const isText = mime.startsWith('text/') || mime.includes('json') || /\.(txt|md|csv|json|js|py|html|htm|xml|css|log)$/i.test(nameLower);
 
       bodyEl.innerHTML = '';
       if (isImg) {
-        bodyEl.innerHTML = `<img src="${att.dataUrl}" alt="${escapeHtml(att.name)}" class="max-h-[68vh] w-auto object-contain rounded-lg max-w-full" />`;
+        bodyEl.innerHTML = `<img src="${blobUrl}" alt="${escapeHtml(att.name)}" class="max-h-[68vh] w-auto object-contain rounded-lg max-w-full" />`;
       } else if (isVid) {
-        bodyEl.innerHTML = `<video controls autoplay src="${blobUrl}" class="w-full max-h-[68vh] rounded-lg bg-black"></video>`;
+        bodyEl.innerHTML = `<video controls autoplay playsinline src="${blobUrl}" class="w-full max-h-[68vh] rounded-lg bg-black"></video>`;
       } else if (isAud) {
         bodyEl.innerHTML = `<div class="p-8 w-full max-w-md text-center space-y-4"><div class="text-4xl">🎵</div><div class="text-sm font-bold text-white">${escapeHtml(att.name)}</div><audio controls autoplay src="${blobUrl}" class="w-full"></audio></div>`;
       } else if (isPdf) {
         bodyEl.innerHTML = `<iframe src="${blobUrl}" title="${escapeHtml(att.name)}" class="w-full h-[68vh] rounded-lg bg-white border border-slate-700"></iframe>`;
-      } else if (isText) {
+      } else if (isText && att.dataUrl) {
         const textContent = decodeDataUrlText(att.dataUrl);
         bodyEl.innerHTML = `<pre class="w-full h-[65vh] overflow-auto p-4 rounded-xl bg-slate-900 text-slate-100 text-xs sm:text-sm font-mono whitespace-pre-wrap leading-relaxed">${escapeHtml(textContent || 'Пустой текстовый файл')}</pre>`;
       } else {
@@ -1712,10 +1919,10 @@
           <div class="p-8 text-center space-y-4 max-w-md">
             <div class="text-5xl">📄</div>
             <div class="text-base font-bold text-white break-all">${escapeHtml(att.name)}</div>
-            <p class="text-xs text-slate-400">Этот формат файла (${escapeHtml(att.sizeFormatted || 'документ')}) готов к открытию в отдельной вкладке браузера или скачиванию на устройство.</p>
+            <p class="text-xs text-slate-400">Этот файл (${escapeHtml(att.sizeFormatted || 'документ')}) готов к открытию в отдельной вкладке браузера или скачиванию на устройство.</p>
             <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
               <a href="${blobUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow transition">🔗 Открыть в отдельной ссылке</a>
-              <a href="${att.dataUrl}" download="${escapeHtml(att.name)}" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow transition">⬇️ Скачать файл</a>
+              <a href="${blobUrl}" download="${escapeHtml(att.name)}" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow transition">⬇️ Скачать файл</a>
             </div>
           </div>
         `;
@@ -1741,7 +1948,7 @@
             name: 'Общие файлы и материалы',
             topic: 'Механика',
             authorId: state.currentUserId || 'u_owner',
-            description: 'Автоматически созданная папка для загруженных файлов',
+            description: 'Папка для загруженных файлов и материалов',
             createdAt: '15 окт 2026'
           };
           state.folders.push(autoFolder);
@@ -1749,55 +1956,39 @@
         }
       }
 
-      let processed = 0;
       files.forEach((file, idx) => {
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-          const isVid = (file.type || '').startsWith('video/') || /\.(mp4|webm|mov)$/i.test(file.name);
-          const attObj = {
-            id: 'att_' + Date.now() + '_' + idx + '_' + Math.random().toString(36).slice(2, 6),
-            name: file.name,
-            type: guessMimeType(file.name, file.type),
-            size: file.size,
-            sizeFormatted: formatFileSize(file.size),
-            dataUrl: ev.target.result
-          };
+        const isVid = isVideoAttachment(file);
+        const attObj = createAttachmentFromFile(file, isVid ? 'vid' : 'att');
 
-          const targetType = isVid
-            ? 'video'
-            : (state.materialFilter !== 'all' ? state.materialFilter : 'theory');
+        const targetType = isVid
+          ? 'video'
+          : (state.materialFilter !== 'all' ? state.materialFilter : 'theory');
 
-          state.materials.unshift({
-            id: 'm_' + Date.now() + '_' + idx + '_' + Math.random().toString(36).slice(2, 5),
-            folderId: state.selectedFolderId,
-            type: targetType,
-            difficulty: isVid ? 'Лекция' : 'Базовый',
-            title: file.name,
-            content: '',
-            formula: '',
-            answer: '',
-            solution: '',
-            videoUrl: '',
-            videoFile: isVid ? attObj : null,
-            attachments: isVid ? [] : [attObj],
-            simType: isVid ? 'pendulum' : '',
-            authorId: state.currentUserId || 'u_owner'
-          });
-
-          processed++;
-          if (processed === files.length) {
-            saveState();
-            renderFoldersSection();
-            showToast(
-              files.length === 1
-                ? `Файл «${file.name}» загружен и автоматически подписан!`
-                : `Загружено и автоматически подписано файлов: ${files.length}`,
-              'success'
-            );
-          }
-        };
-        reader.readAsDataURL(file);
+        state.materials.unshift({
+          id: 'm_' + Date.now() + '_' + idx + '_' + Math.random().toString(36).slice(2, 5),
+          folderId: state.selectedFolderId,
+          type: targetType,
+          difficulty: isVid ? 'Лекция' : 'Базовый',
+          title: file.name,
+          content: '',
+          formula: '',
+          answer: '',
+          solution: '',
+          videoUrl: '',
+          videoFile: isVid ? attObj : null,
+          attachments: isVid ? [] : [attObj],
+          authorId: state.currentUserId || 'u_owner'
+        });
       });
+
+      saveState();
+      renderFoldersSection();
+      showToast(
+        files.length === 1
+          ? `Файл «${files[0].name}» загружен и готов к просмотру!`
+          : `Загружено файлов: ${files.length}`,
+        'success'
+      );
     }
 
     function renderDraftAttachmentsPreview() {
@@ -1808,7 +1999,7 @@
           const row = document.createElement('div');
           row.className = 'flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs';
           row.innerHTML = `
-            <span class="text-slate-200 truncate">📎 ${escapeHtml(att.name)} <span class="text-slate-500">(${escapeHtml(att.sizeFormatted || '')})</span></span>
+            <span class="text-slate-200 truncate">${isVideoAttachment(att) ? '🎬' : '📎'} ${escapeHtml(att.name)} <span class="text-slate-500">(${escapeHtml(att.sizeFormatted || '')})</span></span>
             <button type="button" class="text-rose-400 hover:text-rose-300 font-semibold px-1.5">✕ Удалить</button>
           `;
           row.querySelector('button').addEventListener('click', () => {
@@ -1821,7 +2012,7 @@
 
       const vidPrev = document.getElementById('attachedVideoPreview');
       if (vidPrev) {
-        if (draftVideoFile && draftVideoFile.dataUrl) {
+        if (draftVideoFile && (draftVideoFile.blobUrl || draftVideoFile.dataUrl || blobUrlCache.has(draftVideoFile.id))) {
           vidPrev.classList.remove('hidden');
           vidPrev.innerHTML = `
             <div class="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-amber-950/40 border border-amber-500/30 text-xs">
@@ -1847,7 +2038,7 @@
 
     function openAddMaterialModal() {
       if (!hasPerm('add_materials')) {
-        showToast('У вашей роли нет права добавлять материалы. Попросите Главного Администратора включить его.', 'error');
+        showToast('У вашей роли нет права добавлять материалы.', 'error');
         return;
       }
       if (!state.selectedFolderId) {
@@ -1856,7 +2047,7 @@
       }
       document.getElementById('materialModalTitle').textContent = 'Добавить задачу, теорию или видео';
       document.getElementById('materialEditId').value = '';
-      document.getElementById('materialTypeSelect').value = 'problem';
+      document.getElementById('materialTypeSelect').value = state.materialFilter !== 'all' ? state.materialFilter : 'problem';
       document.getElementById('materialDifficultySelect').value = 'Профильный ЕГЭ';
       document.getElementById('materialTitleInput').value = '';
       document.getElementById('materialContentInput').value = '';
@@ -1924,11 +2115,29 @@
       document.getElementById('confirmDeleteModal').classList.remove('hidden');
     }
 
-    // ==================== INTERACTIVE PHYSICS VIDEO PLAYER ====================
+    // ==================== REAL VIDEO PLAYER MODAL (NO SIMULATIONS) ====================
+    function stopVideoPlayerModal() {
+      const nativeVid = document.getElementById('nativeVideoElement');
+      if (nativeVid) {
+        nativeVid.pause();
+        nativeVid.removeAttribute('src');
+        nativeVid.load();
+      }
+      const embedIframe = document.getElementById('embedVideoIframe');
+      if (embedIframe) {
+        embedIframe.src = '';
+      }
+    }
+
     function openVideoModal(mat) {
-      document.getElementById('videoModalTitle').textContent = mat.title;
-      document.getElementById('videoModalFormula').textContent = mat.formula ? `Формулы урока: ${mat.formula}` : '';
-      document.getElementById('videoModalDesc').textContent = mat.content;
+      if (!mat) return;
+      document.getElementById('videoModalTitle').textContent = mat.title || 'Видео';
+      const formulaEl = document.getElementById('videoModalFormula');
+      const descEl = document.getElementById('videoModalDesc');
+      const infoBox = document.getElementById('videoModalInfoBox');
+
+      formulaEl.textContent = mat.formula ? `Формулы: ${mat.formula}` : '';
+      descEl.textContent = mat.content || '';
 
       const extContainer = document.getElementById('videoExternalLinkContainer');
       const extLink = document.getElementById('videoExternalLink');
@@ -1939,173 +2148,74 @@
         extContainer.classList.add('hidden');
       }
 
-      const nativeVid = document.getElementById('nativeVideoElement');
-      const simCanvas = document.getElementById('physicsVideoCanvas');
-      const overlayStatus = document.getElementById('videoOverlayStatus');
+      if (!mat.formula && !mat.content && !(mat.videoUrl && mat.videoUrl.trim())) {
+        infoBox.classList.add('hidden');
+      } else {
+        infoBox.classList.remove('hidden');
+      }
 
-      const attachedVidAtt = (!mat.videoFile && Array.isArray(mat.attachments))
-        ? mat.attachments.find(a => (a.type || '').startsWith('video/'))
-        : null;
-      const customVideoSrc = (mat.videoFile && mat.videoFile.dataUrl)
-        ? mat.videoFile.dataUrl
-        : (attachedVidAtt ? attachedVidAtt.dataUrl : '');
+      const nativeVid = document.getElementById('nativeVideoElement');
+      const embedIframe = document.getElementById('embedVideoIframe');
+      const emptyNotice = document.getElementById('videoEmptyNotice');
+      const controlsBar = document.getElementById('nativeVideoControlsBar');
+      const newTabBtn = document.getElementById('videoModalNewTabBtn');
+      const downloadBtn = document.getElementById('videoModalDownloadBtn');
+      const togglePlayBtn = document.getElementById('toggleVideoPlayBtn');
+      const speedSelect = document.getElementById('videoSpeedSelect');
+
+      stopVideoPlayerModal();
+      nativeVid.classList.add('hidden');
+      embedIframe.classList.add('hidden');
+      emptyNotice.classList.add('hidden');
+      controlsBar.classList.add('hidden');
+      newTabBtn.classList.add('hidden');
+      downloadBtn.classList.add('hidden');
+
+      const primaryVidAtt = getMaterialPrimaryVideo(mat);
+      const vidBlobUrl = primaryVidAtt ? getOrCreateBlobUrl(primaryVidAtt) : '';
 
       document.getElementById('videoPlayerModal').classList.remove('hidden');
 
-      if (customVideoSrc && nativeVid) {
-        stopPhysicsVideoCanvas();
-        simCanvas.classList.add('hidden');
+      if (vidBlobUrl && vidBlobUrl !== '#') {
         nativeVid.classList.remove('hidden');
-        nativeVid.src = customVideoSrc;
-        nativeVid.play().catch(() => {});
-        overlayStatus.textContent = '🎬 Воспроизведение прикреплённого видеофайла';
-      } else {
-        if (nativeVid) {
-          nativeVid.pause();
-          nativeVid.removeAttribute('src');
-          nativeVid.classList.add('hidden');
-        }
-        simCanvas.classList.remove('hidden');
-        overlayStatus.textContent = '▶ Демонстрация эксперимента в реальном времени';
-        currentSimType = mat.simType || 'pendulum';
-        videoPlaying = true;
-        document.getElementById('toggleVideoPlayBtn').textContent = '⏸ Пауза';
-        startPhysicsVideoCanvas();
-      }
-    }
+        controlsBar.classList.remove('hidden');
+        nativeVid.src = vidBlobUrl;
+        nativeVid.playbackRate = parseFloat(speedSelect.value) || 1;
 
-    function stopPhysicsVideoCanvas() {
-      if (videoAnimFrame) {
-        cancelAnimationFrame(videoAnimFrame);
-        videoAnimFrame = null;
-      }
-      const nativeVid = document.getElementById('nativeVideoElement');
-      if (nativeVid) {
-        nativeVid.pause();
-      }
-    }
+        newTabBtn.href = vidBlobUrl;
+        newTabBtn.classList.remove('hidden');
+        downloadBtn.href = vidBlobUrl;
+        downloadBtn.setAttribute('download', primaryVidAtt.name || 'video.mp4');
+        downloadBtn.classList.remove('hidden');
 
-    function startPhysicsVideoCanvas() {
-      stopPhysicsVideoCanvas();
-      const canvas = document.getElementById('physicsVideoCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let t = 0;
-
-      function resizeCanvas() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        canvas.width = Math.max(320, rect.width);
-        canvas.height = Math.max(220, rect.height);
-      }
-      resizeCanvas();
-
-      function renderFrame() {
-        const w = canvas.width;
-        const h = canvas.height;
-        ctx.fillStyle = '#090f1d';
-        ctx.fillRect(0, 0, w, h);
-
-        ctx.strokeStyle = 'rgba(56, 189, 248, 0.08)';
-        ctx.lineWidth = 1;
-        for (let x = 0; x < w; x += 32) {
-          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
-        }
-        for (let y = 0; y < h; y += 32) {
-          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
-        }
-
-        if (currentSimType === 'wave') {
-          const midY = h / 2;
-          ctx.strokeStyle = '#38bdf8';
-          ctx.lineWidth = 3;
-          ctx.beginPath();
-          for (let x = 20; x < w - 20; x += 4) {
-            const y = midY + Math.sin((x * 0.03) - t * 2.5) * (h * 0.28);
-            if (x === 20) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-
-          ctx.strokeStyle = '#818cf8';
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-          for (let x = 20; x < w - 20; x += 4) {
-            const y = midY + Math.cos((x * 0.03) - t * 2.5) * (h * 0.16);
-            if (x === 20) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-        } else if (currentSimType === 'prism') {
-          const cx = w * 0.45;
-          const cy = h * 0.55;
-          const size = Math.min(w, h) * 0.32;
-
-          ctx.strokeStyle = '#f8fafc';
-          ctx.lineWidth = 4;
-          ctx.beginPath();
-          ctx.moveTo(20, cy + 35);
-          ctx.lineTo(cx - size * 0.45, cy);
-          ctx.stroke();
-
-          const colors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#38bdf8', '#a855f7'];
-          colors.forEach((col, i) => {
-            ctx.strokeStyle = col;
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            ctx.moveTo(cx + size * 0.4, cy - 10 + i * 4);
-            const spread = (i - 2.5) * 18 + Math.sin(t * 2 + i) * 3;
-            ctx.lineTo(w - 20, cy - 15 + i * 12 + spread);
-            ctx.stroke();
+        nativeVid.onplay = () => { togglePlayBtn.textContent = '⏸ Пауза'; };
+        nativeVid.onpause = () => { togglePlayBtn.textContent = '▶ Пуск'; };
+        nativeVid.play().catch(() => {
+          togglePlayBtn.textContent = '▶ Пуск';
+        });
+      } else if (mat.videoUrl && mat.videoUrl.trim()) {
+        const parsed = parseExternalVideoEmbed(mat.videoUrl);
+        newTabBtn.href = mat.videoUrl.trim();
+        newTabBtn.classList.remove('hidden');
+        if (parsed && parsed.type === 'iframe') {
+          embedIframe.src = parsed.src;
+          embedIframe.classList.remove('hidden');
+        } else if (parsed && parsed.src) {
+          nativeVid.classList.remove('hidden');
+          controlsBar.classList.remove('hidden');
+          nativeVid.src = parsed.src;
+          nativeVid.playbackRate = parseFloat(speedSelect.value) || 1;
+          nativeVid.onplay = () => { togglePlayBtn.textContent = '⏸ Пауза'; };
+          nativeVid.onpause = () => { togglePlayBtn.textContent = '▶ Пуск'; };
+          nativeVid.play().catch(() => {
+            togglePlayBtn.textContent = '▶ Пуск';
           });
-
-          ctx.strokeStyle = '#7dd3fc';
-          ctx.fillStyle = 'rgba(56, 189, 248, 0.15)';
-          ctx.lineWidth = 2.5;
-          ctx.beginPath();
-          ctx.moveTo(cx, cy - size);
-          ctx.lineTo(cx - size, cy + size * 0.75);
-          ctx.lineTo(cx + size, cy + size * 0.75);
-          ctx.closePath();
-          ctx.fill();
-          ctx.stroke();
         } else {
-          const pivotX = w / 2;
-          const pivotY = 30;
-          const len = Math.min(w, h) * 0.58;
-          const angle = 0.65 * Math.cos(t * 2.1);
-          const bobX = pivotX + len * Math.sin(angle);
-          const bobY = pivotY + len * Math.cos(angle);
-
-          ctx.strokeStyle = 'rgba(56, 189, 248, 0.25)';
-          ctx.setLineDash([5, 5]);
-          ctx.beginPath();
-          ctx.arc(pivotX, pivotY, len, Math.PI / 2 - 0.68, Math.PI / 2 + 0.68);
-          ctx.stroke();
-          ctx.setLineDash([]);
-
-          ctx.strokeStyle = '#94a3b8';
-          ctx.lineWidth = 2.5;
-          ctx.beginPath();
-          ctx.moveTo(pivotX, pivotY);
-          ctx.lineTo(bobX, bobY);
-          ctx.stroke();
-
-          const grad = ctx.createRadialGradient(bobX - 5, bobY - 5, 2, bobX, bobY, 18);
-          grad.addColorStop(0, '#7dd3fc');
-          grad.addColorStop(1, '#0284c7');
-          ctx.fillStyle = grad;
-          ctx.beginPath();
-          ctx.arc(bobX, bobY, 16, 0, Math.PI * 2);
-          ctx.fill();
+          emptyNotice.classList.remove('hidden');
         }
-
-        if (videoPlaying) {
-          t += 0.025 * videoSimSpeed;
-        }
-        videoAnimFrame = requestAnimationFrame(renderFrame);
+      } else {
+        emptyNotice.classList.remove('hidden');
       }
-
-      videoAnimFrame = requestAnimationFrame(renderFrame);
     }
 
     // ==================== ESCAPE HTML HELPER ====================
@@ -2121,6 +2231,7 @@
     // ==================== EVENT LISTENERS INITIALIZATION ====================
     window.addEventListener('DOMContentLoaded', () => {
       renderAuthScreen();
+      hydrateBlobsFromDB();
 
       const loginForm = document.getElementById('loginForm');
 
@@ -2143,13 +2254,12 @@
         const loginVal = document.getElementById('loginEmail').value.trim();
         const passVal = document.getElementById('loginPassword').value;
 
-        // Главный админ: логин respect, пароль sigma
         if (loginVal.toLowerCase() === ROOT_ADMIN_LOGIN) {
           if (passVal !== ROOT_ADMIN_PASS) {
-            showToast('Неверный пароль для главного администратора respect!', 'error');
+            showToast('Неверный логин или пароль!', 'error');
             return;
           }
-          loginAsUser('u_owner', true);
+          loginAsUser('u_owner', false);
           return;
         }
 
@@ -2157,7 +2267,7 @@
           u => !isRootOwner(u) && (u.email.toLowerCase() === loginVal.toLowerCase() || u.name.toLowerCase() === loginVal.toLowerCase())
         );
         if (!found) {
-          showToast('Такой логин не найден! Логины и пароли выдаёт Главный Администратор (respect).', 'error');
+          showToast('Такой логин не найден! Проверьте правильность ввода.', 'error');
           return;
         }
         if (found.password !== passVal) {
@@ -2182,7 +2292,6 @@
         saveState();
         renderApp();
       });
-
 
       document.getElementById('logoutBtn').addEventListener('click', () => {
         state.currentUserId = null;
@@ -2265,6 +2374,7 @@
       document.getElementById('cancelMaterialModalBtn').addEventListener('click', () => {
         document.getElementById('materialModal').classList.add('hidden');
       });
+
       const matFilesInput = document.getElementById('materialFilesInput');
       if (matFilesInput) {
         matFilesInput.addEventListener('change', (e) => {
@@ -2274,20 +2384,17 @@
             titleInput.value = files[0].name;
           }
           files.forEach(file => {
-            const reader = new FileReader();
-            reader.onload = (ev) => {
-              draftAttachments.push({
-                id: 'att_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
-                name: file.name,
-                type: guessMimeType(file.name, file.type),
-                size: file.size,
-                sizeFormatted: formatFileSize(file.size),
-                dataUrl: ev.target.result
-              });
-              renderDraftAttachmentsPreview();
-            };
-            reader.readAsDataURL(file);
+            const isVid = isVideoAttachment(file);
+            const attObj = createAttachmentFromFile(file, isVid ? 'vid' : 'att');
+            if (isVid && !draftVideoFile) {
+              draftVideoFile = attObj;
+              document.getElementById('materialTypeSelect').value = 'video';
+              syncMaterialFormFields();
+            } else {
+              draftAttachments.push(attObj);
+            }
           });
+          renderDraftAttachmentsPreview();
           matFilesInput.value = '';
         });
       }
@@ -2301,19 +2408,8 @@
           if (titleInput && !titleInput.value.trim()) {
             titleInput.value = file.name;
           }
-          const reader = new FileReader();
-          reader.onload = (ev) => {
-            draftVideoFile = {
-              id: 'vid_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
-              name: file.name,
-              type: guessMimeType(file.name, file.type || 'video/mp4'),
-              size: file.size,
-              sizeFormatted: formatFileSize(file.size),
-              dataUrl: ev.target.result
-            };
-            renderDraftAttachmentsPreview();
-          };
-          reader.readAsDataURL(file);
+          draftVideoFile = createAttachmentFromFile(file, 'vid');
+          renderDraftAttachmentsPreview();
         });
       }
 
@@ -2379,7 +2475,7 @@
       document.getElementById('materialForm').addEventListener('submit', (e) => {
         e.preventDefault();
         const editId = document.getElementById('materialEditId').value;
-        const type = document.getElementById('materialTypeSelect').value;
+        let type = document.getElementById('materialTypeSelect').value;
         const difficulty = document.getElementById('materialDifficultySelect').value;
         let title = document.getElementById('materialTitleInput').value.trim();
         const content = document.getElementById('materialContentInput').value.trim();
@@ -2388,7 +2484,19 @@
         const solution = document.getElementById('materialSolutionInput').value.trim();
         const videoUrl = document.getElementById('materialVideoUrlInput').value.trim();
 
-        // Если заголовок не написан — автоматически подписываем именем загруженного файла
+        // If user attached a video in draftAttachments and didn't set draftVideoFile, promote it
+        if (!draftVideoFile && draftAttachments.length > 0) {
+          const vidIdx = draftAttachments.findIndex(a => isVideoAttachment(a));
+          if (vidIdx !== -1 && (type === 'video' || (!answer && !solution && draftAttachments.length === 1))) {
+            draftVideoFile = draftAttachments.splice(vidIdx, 1)[0];
+            type = 'video';
+          }
+        }
+        if (draftVideoFile) {
+          type = 'video';
+        }
+
+        // Auto-title from filename if left blank
         if (!title) {
           if (draftVideoFile && draftVideoFile.name) {
             title = draftVideoFile.name;
@@ -2433,7 +2541,6 @@
             videoUrl,
             videoFile: draftVideoFile ? { ...draftVideoFile } : null,
             attachments: [...draftAttachments],
-            simType: type === 'video' ? 'pendulum' : '',
             authorId: state.currentUserId
           });
           showToast(`Материал «${title}» добавлен в папку`, 'success');
@@ -2445,7 +2552,7 @@
 
       document.getElementById('openAddUserModalBtn').addEventListener('click', () => {
         if (!hasPerm('manage_roles')) {
-          showToast('Только Главный Администратор может приглашать участников и выдавать роли!', 'error');
+          showToast('У вашей роли нет прав для добавления участников.', 'error');
           return;
         }
         document.getElementById('newUserName').value = '';
@@ -2466,11 +2573,11 @@
         const role = document.getElementById('newUserRole').value;
 
         if (email === ROOT_ADMIN_LOGIN || name.toLowerCase() === ROOT_ADMIN_LOGIN) {
-          showToast('Главный Администратор (respect) может быть только один!', 'error');
+          showToast('Этот логин уже зарезервирован в системе!', 'error');
           return;
         }
         if (state.users.some(u => u.email.toLowerCase() === email)) {
-          showToast('Участник с такой почтой или логином уже есть в списке!', 'error');
+          showToast('Участник с таким логином уже есть в списке!', 'error');
           return;
         }
         state.users.push({
@@ -2492,27 +2599,37 @@
           ta.select();
           document.execCommand('copy');
           ta.remove();
-          showToast(`Аккаунт «${email}» создан! Логин и пароль скопированы в буфер обмена — можете скинуть их участнику.`, 'success');
+          showToast(`Аккаунт «${email}» создан! Логин и пароль скопированы в буфер обмена.`, 'success');
         } catch (err) {
           showToast(`Аккаунт «${email}» создан (пароль: ${password})!`, 'success');
         }
       });
 
       document.getElementById('closeVideoModalBtn').addEventListener('click', () => {
-        stopPhysicsVideoCanvas();
+        stopVideoPlayerModal();
         document.getElementById('videoPlayerModal').classList.add('hidden');
       });
-      document.getElementById('toggleVideoPlayBtn').addEventListener('click', (e) => {
-        videoPlaying = !videoPlaying;
-        e.target.textContent = videoPlaying ? '⏸ Пауза' : '▶ Пуск';
+      document.getElementById('toggleVideoPlayBtn').addEventListener('click', () => {
+        const nativeVid = document.getElementById('nativeVideoElement');
+        if (!nativeVid || nativeVid.classList.contains('hidden')) return;
+        if (nativeVid.paused) {
+          nativeVid.play().catch(() => {});
+        } else {
+          nativeVid.pause();
+        }
       });
       document.getElementById('restartVideoSimBtn').addEventListener('click', () => {
-        videoPlaying = true;
-        document.getElementById('toggleVideoPlayBtn').textContent = '⏸ Пауза';
-        startPhysicsVideoCanvas();
+        const nativeVid = document.getElementById('nativeVideoElement');
+        if (!nativeVid || nativeVid.classList.contains('hidden')) return;
+        nativeVid.currentTime = 0;
+        nativeVid.play().catch(() => {});
       });
       document.getElementById('videoSpeedSelect').addEventListener('change', (e) => {
-        videoSimSpeed = parseFloat(e.target.value) || 1;
+        const speed = parseFloat(e.target.value) || 1;
+        const nativeVid = document.getElementById('nativeVideoElement');
+        if (nativeVid) {
+          nativeVid.playbackRate = speed;
+        }
       });
 
       document.getElementById('cancelDeleteBtn').addEventListener('click', () => {
@@ -2562,15 +2679,15 @@
 
       document.getElementById('resetDemoDataBtn').addEventListener('click', () => {
         confirmDelete(
-          'Сбросить базу к начальному демо-состоянию?',
-          'Все добавленные вручную папки и пользователи будут заменены стандартным набором.',
+          'Очистить все папки и сбросить состояние?',
+          'Все созданные папки и добавленные материалы будут очищены.',
           () => {
             const def = getDefaultState();
-            def.currentUserId = 'u_owner';
+            def.currentUserId = state.currentUserId || 'u_owner';
             state = def;
             saveState();
             renderApp();
-            showToast('Демо-данные восстановлены', 'info');
+            showToast('База очищена', 'info');
           }
         );
       });
